@@ -1,21 +1,20 @@
-# File Renamer
+# Watchdog
 
 ## Description
-This script renames files in a specified directory by removing specific consecutive duplicate text in filenames. It helps in cleaning up file names by ensuring that repeated text does not clutter the filenames.
+The Watchdog script monitors a specified directory for new `.mp3` files that contain a specific trigger string in their names. Once a new file is detected, it checks if the file has finished downloading and then renames the file by removing the trigger string before moving it to a designated destination directory.
+
+## Requirements
+- Python 3.x
+- `watchdog` library (install via `pip install watchdog`)
 
 ## Usage
-1. Ensure you have Python installed on your system.
-2. Place the script in the desired directory or provide the path to the directory containing the files you want to rename.
-3. Run the script using the command:
+1. Set the `watch_directory` variable to the directory you want to monitor (default is `"/Users/mastersteve/Downloads"`).
+2. Set the `destination_directory` variable to the directory where you want to move the renamed files (default is `"/Users/mastersteve/Downloads/Music"`).
+3. Set the `trigger_string` variable to the prefix that triggers the move (default is `"y2mate.com - "`).
+4. Run the script:
    ```bash
-   python file_renamer.py
+   python Watchdog.py
    ```
-4. When prompted, enter the directory path containing the files.
-5. Enter the text you want to remove if it appears consecutively in the filenames.
-
-## Dependencies
-- Python 3.x
-- No external libraries are required.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
