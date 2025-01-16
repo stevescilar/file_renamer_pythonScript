@@ -1,0 +1,46 @@
+import os
+
+# Default file path
+default_directory = "path/to/your/default/music/files"
+
+# Prompt the user to use the default path or enter their own
+use_default = (
+    input(f"Do you want to use the default path: {default_directory}? (yes/no): ")
+    .strip()
+    .lower()
+)
+
+# Determine the directory to use
+if use_default == "yes":
+    directory = default_directory
+else:
+    directory = input(
+        "Enter the path to the folder containing your music files: "
+    ).strip()
+
+# Check if the selected path is valid
+if not os.path.exists(directory):
+    print("Error: The selected path does not exist. Please check and try again.")
+else:
+    # Variable to track if any files were renamed
+    renamed_files = False
+
+    # Loop through all files in the directory
+    for filename in os.listdir(directory):
+        # Check if the file name starts with the specific prefix
+        if filename.startswith("y2mate.com - "):
+            # Remove the prefix from the file name
+            new_name = filename.replace("y2mate.com - ", "", 1)
+            # Get the full paths
+            old_file = os.path.join(directory, filename)
+            new_file = os.path.join(directory, new_name)
+            # Rename the file
+            os.rename(old_file, new_file)
+            print(f'Renamed: "{filename}" to "{new_name}"')
+            renamed_files = True
+
+    # Check if no files were renamed
+    if not renamed_files:
+        print("All files are clean!")
+    else:
+        print("Renaming completed!")
