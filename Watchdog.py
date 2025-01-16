@@ -19,11 +19,11 @@ def is_file_fully_downloaded(file_path, stability_duration=30, check_interval=1)
     stable_count = 0
 
     while stable_count < stability_duration:
-        time.sleep(check_interval)  # Check every `check_interval` seconds
+        time.sleep(check_interval) 
         current_size = os.path.getsize(file_path)
 
         if current_size == initial_size:
-            stable_count += 1  # Size has not changed, increment stable count
+            stable_count += 1  
         else:
             stable_count = 0  # Reset if the file size is changing
 
