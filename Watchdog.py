@@ -8,7 +8,7 @@ from watchdog.events import FileSystemEventHandler
 watch_directory = "/Users/mastersteve/Downloads"
 destination_directory = "/Users/mastersteve/Downloads/Music"
 
-# Prefix to trigger the move
+# Prefix to trigger the movec
 trigger_string = "y2mate.com - "
 
 

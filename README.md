@@ -1,4 +1,5 @@
-# Watchdog
+# Watchdog File Renamer
+
 
 ## Description
 The Watchdog script monitors a specified directory for new `.mp3` files that contain a specific trigger string in their names. Once a new file is detected, it checks if the file has finished downloading and then renames the file by removing the trigger string before moving it to a designated destination directory.
