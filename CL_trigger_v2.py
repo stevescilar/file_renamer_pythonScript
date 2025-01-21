@@ -1,7 +1,9 @@
 import os
 
 # Default file path
-default_directory = "/Users/mastersteve/Downloads/Music"
+# default_directory = "/Users/mastersteve/Downloads/Music"
+default_directory = r"C:\Users\steve\Downloads\Music"
+
 
 # Prompt the user to use the default path or enter their own
 use_default = (

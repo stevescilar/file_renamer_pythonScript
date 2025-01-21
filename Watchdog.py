@@ -5,10 +5,12 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 # Default directory paths
-watch_directory = "/Users/mastersteve/Downloads"
-destination_directory = "/Users/mastersteve/Downloads/Music"
+# default_directory = r"C:\Users\steve\Downloads\Music"
 
-# Prefix to trigger the movec
+watch_directory = r"C:\Users\steve\Downloads\Music"
+destination_directory = r"C:\Users\steve\Downloads\Music\cleaned"
+
+# Prefix to trigger the move
 trigger_string = "y2mate.com - "
 
 
